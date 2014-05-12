@@ -1,10 +1,39 @@
+
+--供应商有联系人，但联系人没有邮箱
+select t.* from t_sys_supplier_temp t where t.gcompanycode is not null and  t.gcompanycode  not    in
+(
+select tl.lcompanyid from t_sys_supplier_linkman_temp tl where tl.lcompanyid is not null and tl.lemil is null
+);
+
+--供应商编码、类别为空的供应商
+select * from t_sys_supplier_temp t where t.gcompanycode is null;
+
+--供应商没有联系人
+select t.*,rowid from t_sys_supplier_temp t where t.gcompanycode is not null and  t.gcompanycode not in 
+(select  tl.lcompanyid from t_sys_supplier_linkman_temp tl where tl.lcompanyid is not null );
+--供应商联系人的邮箱不规范
+select t.* from t_sys_supplier_temp t where t.gcompanycode is not null and  t.gcompanycode    in(
+select tl.lcompanyid from t_sys_supplier_linkman_temp tl where tl.lcompanyid is not null and  tl.lemil is not null
+and (length(tl.lemil) - length(replace(tl.lemil,'@')))/length('@')>1
+)
+--供应商编码重复
+select * from t_sys_supplier_temp a where a.gcompanycode in (
+select gcompanycode from t_sys_supplier_temp t group by t.gcompanycode having count(1)>1
+)
+
+
 select SYS_guid(),t.*,rowid from t_sys_supplier_temp t where t.gmail is not null and rownum<20;
 
 
  select * from t_sys_supplier t;
 
 select t.*,rowid from t_sys_supplier_temp t where t.gcompanycode='DHEC-08-C0047';
-select * from t_sys_supplier_linkman_temp t;
+
+select * from t_sys_supplier_linkman_temp t where t.lcompanyid='DHEC-07-C0009';
+
+select * from t_sys_supplier_linkman_temp tl where tl.lcompanyid is not null and  tl.lemil is not null;
+
+select * from t_sys_supplier_linkman_temp t where t.lcompanyid not in (select a.gcompanycode from t_sys_supplier_temp a);
 
 --delete from  t_sys_supplier_temp t ;
 --delete from t_sys_supplier_linkman_temp t;

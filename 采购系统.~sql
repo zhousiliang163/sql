@@ -2,7 +2,7 @@
 select * from t_supplier_changelog_temp t;
 --供应商信息变更日志表
 select t.*,rowid from t_supplier_changelog t;
---供应商信息变更跟踪主表
+----供应商信息变更跟踪主表
 select t.*,rowid from t_supplier_changetrace t;
 --供应商信息变更跟踪明细表
 select t.*,rowid from t_supplier_changetrace_detail t;
@@ -44,7 +44,7 @@ select t.* from t_sys_static t ;
 
 select * from t_sys_user t where t.id='402881aa412f34ea01412f3800a70000';
 select * from t_sys_user t where t.lname='DHEC-09-M0494';
-select * from t_sys_uds t where t.superid='A4169D058502457C88DF5FCFCA8B2EE3';
+select * from t_sys_uds t where t.superid='402881bd4581b57b01458394b78d0022';
 select * from t_sys_user t;
 select t.*,rowid from T_BASE_USER_RoLE t where t.user_id='40288f8140adfe700140ae1036b80000';
 select * from t_Base_Role t where t.id='402881bd4337adca014337b3990e0000';

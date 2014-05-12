@@ -2,7 +2,7 @@
 select * from user_tab_columns t where t.TABLE_NAME=upper('t_sys_supplier');
 --输出指定表的所有字段
 declare
-  v_tableName varchar2(30):='t_sys_supplier';
+  v_tableName varchar2(30):='t_sys_supplier_linkman';
   v_return varchar2(4000):='';
   not_columns varchar2(4000):='';--不要输出的列
 begin
@@ -10,7 +10,7 @@ begin
    for row in (select * from user_tab_columns t where t.TABLE_NAME=upper(v_tableName)) 
    loop
        
-       if row.column_name not in ('GCOMPANYID','GPASSWORD','GCOMPANYCODE','STATE','STATEDATE','UPDATEDATE') then
+       if row.column_name not in ('STATE','STATEDATE') then
 	          v_return:=v_return||row.column_name||',';
       
        end if;

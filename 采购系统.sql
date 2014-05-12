@@ -2,7 +2,7 @@
 select * from t_supplier_changelog_temp t;
 --供应商信息变更日志表
 select t.*,rowid from t_supplier_changelog t;
---供应商信息变更跟踪主表
+----供应商信息变更跟踪主表
 select t.*,rowid from t_supplier_changetrace t;
 --供应商信息变更跟踪明细表
 select t.*,rowid from t_supplier_changetrace_detail t;
