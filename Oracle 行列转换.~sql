@@ -1,0 +1,36 @@
+--http://blog.csdn.net/tianlesoftware/article/details/4704858
+
+SELECT * FROM t_col_row;
+select * from t_row_col;
+
+SELECT id,
+       MAX(decode(cn, 'c1', cv, NULL)) AS c1,
+       MAX(decode(cn, 'c2', cv, NULL)) AS c2,
+       MAX(decode(cn, 'c3', cv, NULL)) AS c3
+  FROM t_row_col
+GROUP BY id
+ORDER BY 1;
+
+SELECT id, 'c1' cn, c1 cv  FROM t_col_row
+UNION ALL
+　　SELECT id, 'c2' cn, c2 cv   FROM t_col_row
+UNION ALL
+　　SELECT id, 'c3' cn, c3 cv  FROM t_col_row;
+
+
+SELECT id, cn, cv FROM t_col_row
+MODEL
+RETURN UPDATED ROWS
+PARTITION BY (ID)
+DIMENSION BY (0 AS n)
+MEASURES ('xx' AS cn,'yyy' AS cv,c1,c2,c3)
+RULES UPSERT ALL
+(
+  cn[1] = 'c1',
+  cn[2] = 'c2',
+  cn[3] = 'c3',
+  cv[1] = c1[0],
+  cv[2] = c2[0],
+  cv[3] = c3[0]
+  )
+ORDER BY ID,cn;
