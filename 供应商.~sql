@@ -74,9 +74,9 @@ select * from t_sys_supplier_other t where t.state=1
 and t.supplier_code='DHEC-14-S0514'
 and t.column_name='' ;
 
-select t.*,rowid from t_sys_supplier_other t where t.supplier_code='DHEC-14-S0514';
+select t.*,rowid from t_sys_supplier_other t where t.supplier_code='DHEC-14-S0515';
 
-select to_char(supplier_other_select('DHEC-14-S0514')) from dual;
+select to_char(supplier_other_select('DHEC-14-S0516')) from dual;
 
 --供应商生产设备表
 select t.*,rowid from t_sys_supplier_equipment t;

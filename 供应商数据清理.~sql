@@ -36,7 +36,7 @@ begin
    
   for p in (
     select * from p_sys_processinstance t where t.appid in ('010407','01040a','01040b')
-    --and t.resouceid in ('20140430085123904629803')
+    and t.resouceid in ('f77c113d3b1d469181b7aa15ee4be53a')
     )
  loop
 	     delete_process(p.resouceid,p.appid);
