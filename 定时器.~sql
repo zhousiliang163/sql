@@ -1,4 +1,4 @@
-create or replace procedure proce_remote_51_purchases is
+/*create or replace procedure proce_remote_51_purchases is
 
 begin
    
@@ -7,7 +7,7 @@ begin
   commit;   
 
 end;
-
+*/
 
 declare
 jobno number(2);

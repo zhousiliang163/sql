@@ -32,6 +32,7 @@ end ;
 */
 select t.businesstypecode,t.propertycode,t.remark,t.propertyname from T_BUSINESSTYPE_PROPERTY t where t.businesstypecode='01050402';
 select * from T_BUSINESSTYPE_RALATION t;
+select t.*,rowid from T_BUSINESSTYPE_PROPERTY t ;
 select t.*,rowid from T_BUSINESSTYPE_PROPERTY_detail t where t.state=1 and  t.propertycode in ('741B8D425CD8425E9E2D49AEF88536FA','48644CC647AF492EA08EDBE29596FB13');
 
 select * from t_sys_configure t;

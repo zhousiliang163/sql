@@ -16,8 +16,11 @@ select *  from purchases;--purchases_sequence
 select purchases_sequence.nextval from dual;
 --delete from purchases;
 
-select * from wds.purchases@dblink_206;
+select * from user_db_links@dblink_206;
 
+select * from user_tab_comments t where t.TABLE_NAME=upper('purchases');
 
 select * from user_db_links t;
 select * from dba_db_links;
+select * from user_sys_privs t;
+select * from user_role_privs;
