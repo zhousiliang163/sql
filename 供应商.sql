@@ -39,7 +39,7 @@ select * from t_sys_supplier_remind t ;
 select t.*,rowid from t_sys_supplier_agreement t ;
 --select * from t_sys_affix t;
 select * from  T_SYS_ATTACHED t where t.fk_no='a0d5729a4e454ef18031fc6943fb8550';
-select * from t_sys_accessory t where t.businessid='402881bd46170c1a0146172022ac001c';--附件表
+select t.*,rowid from t_sys_accessory t where t.businessid='402881bd46170c1a0146172022ac001c';--附件表
 
 
 select t.*,rowid from t_sys_static t where t.varcode='BUSINESS_TYPE';
