@@ -56,7 +56,7 @@ select * from T_SYS_Pactinfo;
 
 
 --------------同步数据字典供应商经营类别到t_sys_static-------
-select t.*,rowid from t_sys_static t where t.varcode='0g02';
+select t.*,rowid from t_sys_static t where t.varcode='BUSINESS_TYPE';
 select t.up_system_id,t.system_id,t.chinese_name from t_base_data_dictionary t where t.up_system_id='0g02' ;
 
 

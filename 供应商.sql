@@ -53,18 +53,18 @@ select t.*,rowid from T_BUSINESSTYPE_PROPERTY_detail t where t.state=1 and  t.pr
 select * from t_sys_configure t;
 
 --业务表扩展列
-select t.*,rowid from t_column_extend t where t.column_name like'%ajor%';
+select t.*,rowid from t_column_extend t where t.column_name like'%ound%';
 select getUniqueCode(),getColumnCode(),getStrBytableName('in_col_name') from dual;
  
 
 --insert into t_column_extend(column_code,column_name,column_comments)
-values(getColumnCode(),getStrBytableName('floor_space'),'场地面积');
+values(getColumnCode(),getStrBytableName('founded_yearBy_company'),'公司成立年份');
 
 --业务表扩展列关系表，用来绑定一个类型有哪些字段
 select t.*,rowid from t_column_extend_relation t where t.business_type='0g0205';
 
 --insert into t_column_extend_relation(business_type,column_code) 
-select '0g0205',t.column_code from t_column_extend t where t.column_code in ('000001','000002','000003','000004','000007','000019','000021','000022','000023','000024','000025','000016','000012','000011');
+select '0g0205',t.column_code from t_column_extend t where t.column_code in ('000028');
 
 select cer.business_type,ce.column_name,ce.column_comments from t_column_extend ce,t_column_extend_relation cer where ce.column_code=cer.column_code
 and ce.state=1 and cer.state=1
