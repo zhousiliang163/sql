@@ -3,13 +3,14 @@ select * from t_supplier_changelog_temp t;
 --供应商信息变更日志表
 select t.*,rowid from t_supplier_changelog t;
 --供应商信息变更主表
-select t.*,rowid from t_supplier_changetrace t where t.supplierid='1CB0245CB04C4C85B4DF70261EB9F44F';
+select t.*,rowid from t_supplier_changetrace t where t.supplierid='20140522102420800366353';
+select t.*,rowid from t_supplier_changetrace t where t.changecode='20140505151249744136295';
 --供应商信息变更明细表
-select t.*,rowid from t_supplier_changetrace_detail t where t.changecode='20140521143141559460844';
+select t.*,rowid from t_supplier_changetrace_detail t where t.changecode='20140522102420184716888';
 --不良处理
-select t.*,rowid from t_supplier_bad_manage t where t.managecode='20140317022700058';
+select t.*,rowid from t_supplier_bad_manage t where t.managecode='20140604033700049';
 --不良处理和供应商关系表
-select * from t_supplier_bad_ralation t;
+select * from t_supplier_bad_ralation t where t.managecode='20140604033700049';
 --供应商临时表
 select * from t_sys_supplier_temp t;
 --供应商备份表
@@ -27,19 +28,19 @@ begin
 end;
 */
 select * from t_sys_supplier_bak t;
-select t.*,rowid from t_sys_supplier t where t.gcompanyid='402881bd44ae9aaf0144af982c910001'  for update;
-select t.*,rowid from t_sys_supplier t where t.gcompanycode='DHEC-14-S0522';
+select t.*,rowid from t_sys_supplier t where t.gcompanyid='402881bd45f878f70145f8facabb0004'  for update;
+select t.*,rowid from t_sys_supplier t where t.gcompanycode='DHEC-10-Q0222';
 select * from t_sys_supplier_linkman t where t.lcompanyid='0A034122C25F42738ACEC8C39A787368';
 select * from t_sys_supplier_linkman_bak t;
 select t.*,rowid from T_SYS_Supplier_Tinform t where t.tinformid='402881bd4549198c01454996e4dd0000';--发布通知表
 select * from t_Supplier_notice_relation t where t.supplierid='A4169D058502457C88DF5FCFCA8B2EE3';--供应商与通知关系表
-select t.*,rowid from t_sys_supplier_valua t;
-select * from t_supplier_kaoping_relation t where t.valuaid='402881bd449035450144904b60970000';
+select t.*,rowid from t_sys_supplier_valua t where t.vcode='2014KP-011';
+select * from t_supplier_kaoping_relation t where t.valuaid='402881bd466e926f01466f1430bc0000';
 select * from t_sys_supplier_remind t ;
 select t.*,rowid from t_sys_supplier_agreement t ;
 --select * from t_sys_affix t;
 select * from  T_SYS_ATTACHED t where t.fk_no='a0d5729a4e454ef18031fc6943fb8550';
-select t.*,rowid from t_sys_accessory t where t.businessid='402881bd46170c1a0146172022ac001c';--附件表
+select t.*,rowid from t_sys_accessory t where t.businessid='402881bd46170c1a0146172022ac001c';--表
 
 
 select t.*,rowid from t_sys_static t where t.varcode='BUSINESS_TYPE';
@@ -84,8 +85,17 @@ select t.*,rowid from t_sys_supplier_equipment t;
 select t.*,rowid from th_sys_supplier_equipment t;
 --生产设备变更审批日志表，新增的的存储在这里
 select t.*,rowid from t_supplier_equipment_auditLog t;
+
 --供应商资质类表
 select * from t_supplier_qualification t;
 --供应商资质类历史表
 select * from th_supplier_qualification t;
+
+--供应商可提供的资质文件表
+select t.*,rowid from t_sys_accessory t where t.businessid='402881bd46170c1a0146172022ac001c';
+--供应商可提供的资质文件表历史表
+select t.*,rowid from th_sys_accessory t where t.businessid='402881bd46170c1a0146172022ac001c';
+--供应商可提供的资质文件变更审批日志表,，新增的的存储在这里
+select t.*,rowid from t_sys_accessory_auditLog t;
+
 
