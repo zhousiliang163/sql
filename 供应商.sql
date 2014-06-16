@@ -10,8 +10,7 @@ select t.*,rowid from t_supplier_changetrace_detail t where t.changecode='201405
 --不良处理
 select t.*,rowid from t_supplier_bad_manage t where t.managecode='20140604033700049';
 --不良处理和供应商关系表
-select * from t_supplier_bad_ralation t where t.managecode='20140604033700049';
---供应商临时表
+select * from t_supplier_bad_ralation t;--供应商临时表
 select * from t_sys_supplier_temp t;
 --供应商备份表
 
@@ -28,8 +27,6 @@ begin
 end;
 */
 select * from t_sys_supplier_bak t;
-select t.*,rowid from t_sys_supplier t where t.gcompanyid='402881bd45f878f70145f8facabb0004'  for update;
-select t.*,rowid from t_sys_supplier t where t.gcompanycode='DHEC-10-Q0222';
 select * from t_sys_supplier_linkman t where t.lcompanyid='0A034122C25F42738ACEC8C39A787368';
 select * from t_sys_supplier_linkman_bak t;
 select t.*,rowid from T_SYS_Supplier_Tinform t where t.tinformid='402881bd4549198c01454996e4dd0000';--发布通知表
