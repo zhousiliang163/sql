@@ -4,9 +4,9 @@ select * from t_supplier_changelog_temp t;
 select t.*,rowid from t_supplier_changelog t;
 --供应商信息变更主表
 select t.*,rowid from t_supplier_changetrace t where t.supplierid='20140522102420800366353';
-select t.*,rowid from t_supplier_changetrace t where t.changecode='20140617151748476558412';
+select t.*,rowid from t_supplier_changetrace t where t.changecode='20140618105655586357488';
 --供应商信息变更明细表
-select t.*,rowid from t_supplier_changetrace_detail t where t.changecode='20140617151748476558412';
+select t.*,rowid from t_supplier_changetrace_detail t where t.changecode='20140618111238708511691';
 --不良处理
 select t.*,rowid from t_supplier_bad_manage t where t.managecode='20140604033700049';
 --不良处理和供应商关系表
@@ -96,12 +96,14 @@ select t.*,rowid from t_supplier_equipment_auditLog t;
 select * from t_supplier_qualification t;
 --供应商资质类历史表
 select * from th_supplier_qualification t;
+--供应商资质类历史表审批日志表
+select * from t_qualification_auditLog t;
 
 --供应商可提供的资质文件表
-select t.*,rowid from t_sys_accessory t where t.businessid='6910EEF6CC7D48BC835469523FE80E1E';
+select t.*,rowid from t_sys_accessory t where t.accessoryid='2014061810565579169566';
 --供应商可提供的资质文件表历史表
-select t.*,rowid from th_sys_accessory t where t.businessid='6910EEF6CC7D48BC835469523FE80E1E';
---供应商可提供的资质文件变更审批日志表,，新增的的存储在这里
-select t.*,rowid from t_sys_accessory_auditLog t where t.accessoryid='20140617151748584220569';
+select t.*,rowid from th_sys_accessory t where t.accessoryid='2014061810565579169566';
+--供应商可提供的资质文件变更审批日志表
+select t.*,rowid from t_sys_accessory_auditLog t where t.accessoryid='2014061810565579169566';
 
 
