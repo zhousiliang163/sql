@@ -45,7 +45,7 @@ select * from t_supplier_kaoping_relation t where t.valuaid='402881bd466e926f014
 select * from t_sys_supplier_remind t ;
 select t.*,rowid from t_sys_supplier_agreement t ;
 --select * from t_sys_affix t;
-select * from  T_SYS_ATTACHED t where t.fk_no='a0d5729a4e454ef18031fc6943fb8550';
+select t.*,rowid from  T_SYS_ATTACHED t where t.fk_no='097880bc-22eb-74ad-a6a3-23d2faebfe0c';
 select t.*,rowid from t_sys_accessory t where t.businessid='402881bd46170c1a0146172022ac001c';--表
 
 
@@ -93,7 +93,7 @@ select t.*,rowid from th_sys_supplier_equipment t;
 select t.*,rowid from t_supplier_equipment_auditLog t;
 
 --供应商资质类表
-select * from t_supplier_qualification t;
+select * from t_supplier_qualification t;--097880bc-22eb-74ad-a6a3-23d2faebfe0c
 --供应商资质类历史表
 select * from th_supplier_qualification t;
 --供应商资质类历史表审批日志表
