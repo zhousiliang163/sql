@@ -95,7 +95,7 @@ select t.*,rowid from t_supplier_equipment_auditLog t;
 --供应商资质类表
 select * from t_supplier_qualification t;--097880bc-22eb-74ad-a6a3-23d2faebfe0c
 --供应商资质类历史表
-select * from th_supplier_qualification t;
+select t.*,rowid from th_supplier_qualification t;
 --供应商资质类历史表审批日志表
 select * from t_qualification_auditLog t;
 
