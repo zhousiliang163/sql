@@ -34,7 +34,7 @@ end;
 select * from t_sys_supplier_bak t;
 
 select t.*,rowid from t_sys_supplier t where t.gcompanyid='402881bd45f878f70145f8facabb0004'  for update;
-select t.*,rowid from t_sys_supplier t where t.gcompanycode='DHEC-10-Q0228';
+select t.*,rowid from t_sys_supplier t where t.gcompanycode='DHEC-14-S0520';
 
 select * from t_sys_supplier_linkman t where t.lcompanyid='0A034122C25F42738ACEC8C39A787368';
 select * from t_sys_supplier_linkman_bak t;
