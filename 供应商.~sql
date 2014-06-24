@@ -34,7 +34,7 @@ end;
 select * from t_sys_supplier_bak t;
 
 select t.*,rowid from t_sys_supplier t where t.gcompanyid='402881bd45f878f70145f8facabb0004'  for update;
-select t.*,rowid from t_sys_supplier t where t.gcompanycode='DHEC-14-S0520';
+select t.*,rowid from t_sys_supplier t where t.gcompanycode='DHEC-14-C0001';
 
 
 select t.*,rowid from T_SYS_Supplier_Tinform t where t.tinformid='402881bd4549198c01454996e4dd0000';--发布通知表
@@ -119,10 +119,11 @@ select t.*,rowid from   th_customer_product t;
 --主要客户及销售的产品变更审批日志表
 select t.*,rowid from   t_customer_product_auditLog t;
 --供应商联系人
+select * from t_sys_supplier_linkman t where t.lcompanyid='402881bd46cbe77e0146cc62d72a09d1';
 select * from t_sys_supplier_linkman t where t.lcompanyid='0A034122C25F42738ACEC8C39A787368';
 select * from t_sys_supplier_linkman_bak t;
 --供应商联系人历史表
-select * from th_sys_supplier_linkman t ;
+select * from th_sys_supplier_linkman t where t.linkmancode='20140624145013125514852';
 --供应商联系人变更审批表
 select * from t_supplier_linkman_auditLog;
 

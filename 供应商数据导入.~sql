@@ -17,8 +17,8 @@ select tl.lcompanyid from t_sys_supplier_linkman_temp tl where tl.lcompanyid is 
 and (length(tl.lemil) - length(replace(tl.lemil,'@')))/length('@')>1
 )
 --供应商编码重复
-select * from t_sys_supplier_temp a where a.gcompanycode in (
-select gcompanycode from t_sys_supplier_temp t group by t.gcompanycode having count(1)>1
+select * from t_sys_supplier_temp01 a where a.gcompanycode in (
+select gcompanycode from t_sys_supplier_temp01 t group by t.gcompanycode having count(1)>1
 )
 
 
