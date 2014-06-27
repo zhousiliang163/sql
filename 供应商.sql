@@ -56,7 +56,7 @@ select t.*,rowid from T_BUSINESSTYPE_PROPERTY t;
 select * from T_BUSINESSTYPE_RALATION t;
 select t.*,rowid from T_BUSINESSTYPE_PROPERTY_detail t where t.state=1 and  t.propertycode in ('741B8D425CD8425E9E2D49AEF88536FA','48644CC647AF492EA08EDBE29596FB13');
 
-select * from t_sys_configure t;
+
 
 --业务表扩展列
 select t.*,rowid from t_column_extend t where t.column_name like'%ound%';
@@ -88,7 +88,7 @@ select to_char(supplier_other_select('DHEC-14-S0516')) from dual;
 select t.*,rowid from t_sys_supplier_equipment t;
 --供应商生产设备历史表
 select t.*,rowid from th_sys_supplier_equipment t;
---生产设备变更审批日志表，新增的的存储在这里
+--生产设备变更审批日志表
 select t.*,rowid from t_supplier_equipment_auditLog t;
 
 --供应商资质类表
